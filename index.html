@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b12">
+<title>Waheed GDL Foot Premium</title>
 
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#080b12;
+  color:#fff;
+  font-family:Arial,sans-serif;
+}
+header{
+  padding:22px 18px;
+  background:#111722;
+  border-bottom:1px solid #cba84b;
+}
+.logo{font-size:21px;font-weight:bold;color:#f2cc65}
+.logo span{color:white}
+.subtitle{color:#9ba4b5;font-size:12px;margin-top:7px}
+main{padding:18px;max-width:700px;margin:auto}
+h2{font-size:19px;margin-top:26px}
+.hero{
+  padding:22px;
+  border:1px solid #80672d;
+  border-radius:16px;
+  background:linear-gradient(135deg,#20202a,#11151e);
+}
+.hero h1{font-size:25px;line-height:1.3}
+.gold{color:#f2cc65}
+button{
+  border:0;border-radius:9px;padding:12px;
+  background:#e8bd53;color:#111;
+  font-weight:bold;cursor:pointer;
+}
+.tabs{display:flex;gap:8px;margin:20px 0}
+.tabs button{flex:1;background:#202734;color:white}
+.tabs button.active{background:#e8bd53;color:#111}
+.card{
+  background:#131a26;border:1px solid #2b3443;
+  border-radius:13px;padding:16px;margin:12px 0;
+}
+.teams{font-size:17px;font-weight:bold;margin:12px 0}
+.meta{color:#aab3c2;font-size:13px;line-height:1.7}
+.pick{color:#f2cc65;font-weight:bold;margin-top:10px}
+.vip{
+  border:1px solid #cba84b;
+  background:linear-gradient(135deg,#292315,#141720);
+}
+.hidden{display:none}
+footer{text-align:center;color:#8d96a6;padding:30px 15px;font-size:12px}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo">👑 WAHEED GDL <span>FOOT PREMIUM</span></div>
+  <div class="subtitle">ANALYSES • PRONOSTICS • PASSION FOOTBALL</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="gold">BIENVENUE DANS TON ESPACE FOOTBALL</div>
+    <h1>Le football se lit.<br><span class="gold">Le risque se maîtrise.</span></h1>
+    <p class="meta">Retrouve les analyses, les pronostics et le suivi des résultats.</p>
+    <button onclick="document.getElementById('matchs').scrollIntoView({behavior:'smooth'})">
+      Voir les pronostics ⚽
+    </button>
+  </section>
+
+  <div class="tabs">
+    <button class="active" onclick="showTab('free',this)">Gratuit</button>
+    <button onclick="showTab('vip',this)">👑 Espace VIP</button>
+  </div>
+
+  <section id="free">
+    <h2>⚽ Pronostics gratuits</h2>
+    <p class="meta">Exemple de présentation — aucun match réel n'est encore connecté.</p>
+
+    <div class="card" id="matchs">
+      <div class="meta">MATCH D'EXEMPLE • À REMPLACER</div>
+      <div class="teams">Équipe A <span class="gold">VS</span> Équipe B</div>
+      <div class="meta">Marché : double chance</div>
+      <div class="pick">Pronostic fictif : 1X</div>
+    </div>
+  </section>
+
+  <section id="vip" class="hidden">
+    <h2 class="gold">👑 Espace VIP</h2>
+    <div class="card vip">
+      <h3>Les analyses Premium</h3>
+      <p class="meta">Les pronostics VIP seront publiés ici après la mise en place d'un système sécurisé.</p>
+      <p class="gold">Accès VIP à venir</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📊 Notre engagement</h2>
+    <div class="card">
+      <p>✓ Analyses présentées clairement</p>
+      <p>✓ Suivi des résultats à intégrer</p>
+      <p>✓ Transparence sur les pronostics perdants et gagnants</p>
+      <p>✓ Aucun gain garanti</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  WAHEED GDL FOOT PREMIUM © 2026<br><br>
+  Les pronostics sont des estimations, pas des certitudes.
+  Jouez de manière responsable.
+</footer>
+
+<script>
+function showTab(id,button){
+  document.getElementById('free').classList.toggle('hidden',id!=='free');
+  document.getElementById('vip').classList.toggle('hidden',id!=='vip');
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+  button.classList.add('active');
+}
+</script>
+</body>
+</html>
